@@ -1,0 +1,131 @@
+.profile-card {
+    width: 300px;
+    height: 180px;
+    background: linear-gradient(to bottom, #0f8ad7 50%, #ffffff 50%);
+    border-radius: 15px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    padding: 0;
+    cursor: pointer;
+}
+
+.image {
+    flex-shrink: 0;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 5px solid #0f8ad7;
+    position: relative;
+    margin: 0 20px;
+    margin-top: -70px;
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.text-data {
+    margin-top: -90px;
+    display: flex;
+    justify-content: center;
+    color: #ffffff;
+    flex-direction: column;
+}
+
+.text-data span{
+    font-size: 1.2rem;
+    color: black;
+}
+
+.list-student{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.btn-show{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 0 0 15px 15px;
+    background-color: #0f8ad7;
+    color: #ffffff;
+    font-size: 14px;
+    cursor: pointer;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0;
+}
+
+.profile-body {
+    display: flex;
+    flex-direction: row;
+    color: #000000;
+    box-sizing: border-box;
+}
+
+.student-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #f9f9f9;
+}
+
+.student-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    padding: 20px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+.student-image img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.student-info {
+    margin-bottom: 20px;
+}
+
+.student-name {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.student-detail {
+    font-size: 1em;
+    color: #666;
+    margin: 5px 0;
+}
+
+.student-actions .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.student-actions .btn-primary:hover {
+    background-color: #0056b3;
+}

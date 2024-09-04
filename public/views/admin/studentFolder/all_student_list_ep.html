@@ -1,0 +1,24 @@
+{% extends layouts %}
+{% from breadcrumb import breadcrumb_field %}
+{% from message import alert_msg %}
+{% from forms import input_field , loader , import_field , submit %}
+{% from pagination import dataTable_pagination, pagination_field %}
+{% block content %}
+{{ breadcrumb_field( 'STUDENTS LIST' )}}
+<div class="list-student">
+    {% for select in select %}
+    <div class="profile-card">
+        <div class="image">
+            <img src="{{__img('avatar.png')}}" alt="" class="profile-img">
+        </div>
+        <div class="text-data">
+            <span>{{ select.identifiant|e }}</span>
+            <span>{{ select.name|e }}</span>
+            <span>{{ select.surname|e }}</span>
+        </div>
+        <a href="{{ __pathId( 'student@show_student' , { '_student': select._id|e }) }}" class="btn btn-show">Show</a>
+    </div>
+    {% endfor %}
+
+</div>
+{% endblock %}

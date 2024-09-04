@@ -1,0 +1,46 @@
+{% extends layouts %}
+{% from forms import input_field, import_field, submit %}
+{% from breadcrumb import breadcrumb_field %}
+{% from message import alert_msg %}
+{% block content %}
+{{ alert_msg( reponse , alert ) }}
+{{ breadcrumb_field( "ADD PROGRAM", "program@all_program" ,"LIST OF ALL PROGRAMS"
+)}}
+<div class='container-fluid'>
+    {{ alert_msg(answers, alert)}}
+    <form class="laodForm" method="post" novalidate enctype="multipart/form-data">
+        <div class="row g-3">
+            {{ __csrf() }}
+            {{ input_field(
+            {
+            maxlength : 300 ,
+            require : true ,
+            character : "text",
+            name : '__libelle__' ,
+            label : 'Libellé du programme' ,
+            feedback : 'Please enter libel.' ,
+            }
+            )}}
+            {{ input_field(
+            {
+            type : 'date',
+            require : true ,
+            name : '__date__' ,
+            label : 'Date emploi du temps',
+            }
+            )}}
+            {{ import_field({
+            name : 'program',
+            id : 'program' ,
+            accept : '.pdf',
+            require : true,
+            feedback : "This field is required!!!"
+            })}}
+            {{ submit({
+            label : 'Save your informations',
+            icon : 'bi bi-pen'
+            }) }}
+        </div>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends layouts %} {% from breadcrumb import breadcrumb_field %} {% from message import alert_msg %}
+{% block content %}
+{{ breadcrumb_field('SHOW STUDENT', 'student@all_student_list', 'STUDENTS LIST') }}
+<div class="student-container">
+    {% for student in student %}
+    <div class="student-card">
+        <div class="student-image">
+            <img src="{{__img('avatar.png')}}" alt="Student Image">
+        </div>
+        <div class="student-info">
+            <h2 class="student-name">{{ student.name | e}} {{ student.surname | e}}</h2>
+            <p class="student-detail"><strong>Matricule:</strong> {{ student.identifiant | e}}</p>
+            <p class="student-detail"><strong>Email:</strong> {{ student.email | e}}</p>
+            <p class="student-detail"><strong>Contact:</strong> {{ student.contact | e}}</p>
+            <p class="student-detail"><strong>Birthday:</strong> {{ student.birthday | e}}</p>
+            <p class="student-detail"><strong>Birthplace:</strong> {{ student.birthplace | e}}</p>
+            <p class="student-detail"><strong>Sexe:</strong> {{ student.sex | e}}</p>
+        </div>
+        <div class="student-actions">
+            <a href="{{ __pathId( 'student@update_student' , { '_student': student._id|e }) }}"
+                class="btn btn-primary">Modification</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

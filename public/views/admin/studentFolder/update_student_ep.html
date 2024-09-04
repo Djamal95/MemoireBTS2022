@@ -1,0 +1,92 @@
+{% extends layouts %}
+{% from breadcrumb import breadcrumb_field %}
+{% from message import alert_msg %}
+{% from forms import input_field, select_field, import_field, loader , submit %}
+{% block content %}
+{{ breadcrumb_field('UPDATE STUDENT', 'student@all_student_list', 'STUDENTS LIST') }}
+{{ alert_msg(reponse, alert) }}
+<div class='container-fluid'>
+    <form class="laodForm" method="post" novalidate enctype="multipart/form-data">
+        <div class="row g-3">
+            {% for student in student %}
+            {{ input_field(
+            {
+            require : true ,
+            character : "string",
+            value : student.identifiant,
+            name : '__matr__' ,
+            placeholder : "Enter Number CI",
+            feedback : 'Please enter Number CI' ,
+            }
+            )}}
+            {{ input_field(
+            {
+            require : true ,
+            character : "string",
+            value : student.name,
+            name : '__name__',
+            placeholder : "Enter the name",
+            feedback : 'Please enter the Name.'
+            }
+            )}}
+            {{ input_field(
+            {
+            require : true ,
+            character : "string",
+            name : '__surname__',
+            value : student.surname,
+            placeholder : "Enter the surname",
+            feedback : 'Please enter Surname.'
+            }
+            )}}
+            {{ input_field(
+            {
+            require : true,
+            character : "string",
+            name : "__email__",
+            value : student.email,
+            placeholder : "Enter email",
+            feedback : 'Please enter true email.'
+            })}}
+            {{ input_field(
+            {
+            require : true,
+            character : "string",
+            name : "__contact__",
+            value : student.contact,
+            placeholder : "Enter contact",
+            feedback : 'Please enter contact.'
+            })}}
+            {{ input_field(
+            {
+            require : true,
+            character : "string",
+            name : "__birthday__",
+            value : student.birthday,
+            placeholder : "Enter birthday",
+            feedback : 'Please enter birthday.'
+            })}}
+            {{ input_field(
+            {
+            require : true,
+            character : "string",
+            name : "__birthplace__",
+            value : student.birthplace,
+            placeholder : "Enter birthplace",
+            feedback : 'Please enter birthplace.'
+            })}}
+            {{ select_field(
+            {
+            require : true,
+            name : "__sex__",
+            datas : data.sexList()
+            })}}
+            {% endfor %}
+            {{ submit({
+            label : 'Save your informations',
+            icon : 'bi bi-pen'
+            }) }}
+        </div>
+    </form>
+</div>
+{% endblock %}

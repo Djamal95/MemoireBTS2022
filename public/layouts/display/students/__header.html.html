@@ -1,0 +1,52 @@
+<div class="banner">
+    <img src="{{ __img('banniere.png') }}" alt="Bannière du site">
+</div>
+<div class="header-container">
+    <div class="header-content">
+        <a href="students" class="header-link">
+            <i class="bi bi-person-workspace"></i>
+            Espace Etudiant
+        </a>
+        <a href="{{ __path('program@list_of_program') }}" class="header-link">
+            <i class="bi bi-calendar-month-fill"></i>
+            Emploi du temps
+        </a>
+        <a href="{{ __path('documents@list_of_documents') }}" class="header-link">
+            <i class="bi bi-file-earmark-pdf"></i>
+            Documents de cours
+        </a>
+        <a href="{{__path('index')}}" class="header-link">
+            <i class="bi bi-house-check-fill"></i>
+            Acceuil
+        </a>
+        <div class="div-log">
+            <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                <img id="profile-img" src="{{ __img('avatar.png') }}" alt="Profile" class="rounded-circle">
+                <span class="d-none d-md-block dropdown-toggle ps-2">{{ login }}</span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+                <li class="dropdown-header">
+                    <h6>{{ login }}</h6>
+                </li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li>
+                    <a class="dropdown-item d-flex align-items-center" href="{{ __path('users@change_password') }}">
+                        <i class="bi bi-gear"></i>
+                        <span>Change password</span>
+                    </a>
+                </li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li>
+                    <a class="dropdown-item d-flex align-items-center" href="{{ __logout() }}">
+                        <i class="bi bi-power"></i>
+                        <span>Log out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

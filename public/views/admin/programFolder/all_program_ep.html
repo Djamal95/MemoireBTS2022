@@ -1,0 +1,20 @@
+{% extends layouts %}
+{% from breadcrumb import breadcrumb_field %}
+{% from message import alert_msg %}
+{% from forms import filter_search , loader, checkbox_field, actions_field, select_field %}
+{% from pagination import pagination_field %}{% block content %}
+{{ breadcrumb_field( 'PLATFORM PROGRAM LIST')}}
+{{ alert_msg( reponse , alert ) }}
+<div>
+    <div class="emp-container">
+        {% for program in program %}
+        <a href="{{ __pathId( 'program@show_program' , { '_program': program._id_prog|e }) }}">
+            <div class="card-body-emp">
+                <img class="img-emp" src="{{ __img('emploi.jpg') }}" alt="">
+                <p class="emp-title">{{ program.program_lib|e }}</p>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

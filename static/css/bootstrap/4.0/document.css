@@ -1,0 +1,67 @@
+.document-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.card-body {
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.card-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    border: 3px double #ddd; /* Ajoute une bordure pour distinguer les cartes */
+    box-shadow: 4px 4px 0 0px;
+    border-radius: 8px;
+}
+
+.img-doc {
+    max-width: 100px; /* Ajuste la taille de l'image si nécessaire */
+    margin-bottom: 10px; /* Espacement entre l'image et le texte */
+}
+
+.doc-title {
+    margin: 0;
+    font-size: 9px;
+}
+
+#viewerContainer {
+    height: 600px;
+    border: 1px solid #000;
+    overflow: auto;
+}
+.pdfViewer .page {
+    margin: 0 auto;
+    border: 1px solid #000;
+    width: 863px;
+}
+
+#document{
+    visibility: hidden;
+}
+
+.btn-group{
+    position: absolute;
+    top: 80px;
+    right: 10px;
+}
+
+.Titre{
+    position: absolute;
+    top: 90px;
+    right: 450px;
+    z-index: 5;
+    font-weight: bolder;
+}
+
+#page-info {
+    margin: 0 10px;
+}
+
+.highlight {
+    background-color: yellow;
+}
