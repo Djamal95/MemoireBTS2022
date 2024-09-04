@@ -14,18 +14,6 @@ This software aims to facilitate the understanding of courses by students by mak
 In the future it will be necessary to connect students and instructors in supervision of students outside. The student may ask for help with a particular exercise or have his misunderstanding reviewed.
 
 In the third part, a system for online courses will be integrated
-
-## ⚙️ First configuration
-
-### 💾 Create database
-
-
-#### Install python component
-
-### 🔥 Run your App
-
-### 📗 Documentation
-
 ### Authors
 
 - [Diallo Elhadj Mamadou (Lead) ](https://github.com/Djamal95)
