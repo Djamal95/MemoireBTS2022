@@ -1,19 +1,18 @@
-{% extends layouts %} 
-{% from message import alert_msg %}{% from forms
-import input_field , loader , import_field , submit %}
+{% extends layouts %}
+{% from message import alert_msg %}
 {% block content %}
 {{ alert_msg( reponse , alert ) }}
 <div class='container-fluid admin'>
-    {% for program in program %}
+    {% for ressource in ressource %}
     <div class="btn-group mb-3" role="group">
         <button id="zoom-in" class="btn btn-primary">Zoom In (+)</button>
-        <p class="Titre">{{ program.program_lib | e }}</p>
+        <p class="Titre">{{ ressource.libelleDocument | e }}</p>
         <button id="zoom-out" class="btn btn-secondary">Zoom Out (-)</button>
     </div>
     <div id="viewerContainer">
-        <div id="viewer-emp" class="pdfViewer"></div>
+        <div id="viewer" class="pdfViewer"></div>
     </div>
-    <div id="document">{{ program.program | e }}</div>
+    <div id="document">{{ ressource.document | e }}</div>
     {% endfor %}
 </div>
 {% endblock %}

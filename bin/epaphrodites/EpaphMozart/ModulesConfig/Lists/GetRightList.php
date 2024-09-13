@@ -22,6 +22,26 @@ class GetRightList extends epaphroditeClass
          ],
          [
             'apps' => 'profil',
+            'libelle' => "See program",
+            'path' => 'studentFolder/show_program'
+         ],
+         [
+            'apps' => 'profil',
+            'libelle' => "See program list",
+            'path' => 'studentFolder/list_of_program'
+         ],
+         [
+            'apps' => 'profil',
+            'libelle' => "See courses documents",
+            'path' => 'studentFolder/show_documents'
+         ],
+         [
+            'apps' => 'profil',
+            'libelle' => "See courses documents list",
+            'path' => 'studentFolder/list_of_documents'
+         ],
+         [
+            'apps' => 'profil',
             'libelle' => "Change my informations",
             'path' => 'usersFolder/edit_users_infos'
          ],

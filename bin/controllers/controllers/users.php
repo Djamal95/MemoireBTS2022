@@ -130,25 +130,34 @@ final class users extends MainSwitchers
 
             $SheetData = $this->importFiles->importExcelFiles(static::getFileName('__file__'));
 
-            if (!empty($SheetData)) {
-                
+            if (!empty($SheetData) && static::getPost('__group__') === 3) {
+
                 $this->result = $this->insert->addUsers($SheetData, static::getPost('__group__'));
                 if (is_array($this->result)) {
                     $this->validate = $this->insert->addStudents($SheetData, $this->result);
                     if ($this->validate) {
                         $this->ans = $this->msg->answers('succes');
                         $this->alert = 'alert-success';
-                    }else{
+                    } else {
                         $this->ans = $this->msg->answers('etud-infos');
                         $this->alert = 'alert-success';
                     }
-                } else if($this->result == "Compte existant"){
+                } else if ($this->result == "Compte existant") {
                     $this->ans = $this->msg->answers('compte-exist');
                     $this->alert = 'alert-danger';
-                }else{
+                } else {
                     $this->ans = $this->msg->answers('error');
                     $this->alert = 'alert-danger';
                 }
+            } else if (!empty($SheetData) && static::getPost('__group__') !== 3) {
+                $this->result = $this->insert->addUsers($SheetData, static::getPost('__group__'));
+                [$this->ans, $this->alert] = static::Responses(
+                    $this->result,
+                    [
+                        true => ['succes', 'alert-success'],
+                        false => ['error', 'alert-danger']
+                    ]
+                );
             } else {
                 $this->ans = $this->msg->answers('fileempty');
                 $this->alert = 'alert-danger';
@@ -237,13 +246,14 @@ final class users extends MainSwitchers
     }
 
     /**
-    * start view function
-    * 
-    * @param string $html
-    * @return void
-    */
-     public final function changePasswordAd(string $html): void{
-    
+     * start view function
+     * 
+     * @param string $html
+     * @return void
+     */
+    public final function changePasswordAd(string $html): void
+    {
+
         if (static::isValidMethod(true)) {
 
             $this->result = $this->update->changeUsersPassword(static::getPost('__oldpassword__'), static::getPost('__newpassword__'), static::getPost('__confirm__'));
@@ -266,5 +276,39 @@ final class users extends MainSwitchers
             ],
             true
         );
+    }
+
+    /**
+     * start view function
+     * 
+     * @param string $html
+     * @return void
+     */
+    public final function addUsers(string $html): void
+    {
+
+        if (static::isValidMethod(true)) {
+            if (static::getPost('__password__') === static::getPost('__confPass__')) {
+                $this->result = $this->insert->addUserAccount(
+                    static::getPost('__login__'),
+                    static::getPost('__password__'),
+                    static::getPost('__group__')
+                );
+            } else {
+                $this->ans = $this->msg->answers('mdpnotsame');
+                $this->alert = 'alert-danger';
+            }
+            [$this->ans, $this->alert] = static::Responses(
+                $this->result,
+                [
+                    true => ['succes', 'alert-success'],
+                    false => ['error', 'alert-danger']
+                ]
+            );
+        }
+        $this->views($html, [
+            'reponse' => $this->ans,
+            'alert' => $this->alert,
+        ], true);
     }
 }

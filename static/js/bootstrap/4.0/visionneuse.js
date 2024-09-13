@@ -43,11 +43,25 @@ if (document.getElementById('viewer-emp')) {
     }).catch(error => {
         console.error('Error loading PDF:', error);
     });
+
+    document.getElementById('zoom-in').addEventListener('click', () => {
+        scale += 0.1;
+        if (pdfDoc) {
+            renderPages(pdfDoc, scale);
+        }
+    });
+    
+    document.getElementById('zoom-out').addEventListener('click', () => {
+        scale = Math.max(0.1, scale - 0.1);
+        if (pdfDoc) {
+            renderPages(pdfDoc, scale);
+        }
+    });
 } else {
     const url = '../../static/docs/' + document.getElementById('document').textContent.trim();
     let pdfDoc = null;
     let scale = 1.5;
-    const viewer = document.getElementById('viewer-emp');
+    const viewer = document.getElementById('viewer');
 
     function renderPage(page, scale) {
         const viewport = page.getViewport({ scale });
@@ -86,42 +100,18 @@ if (document.getElementById('viewer-emp')) {
     }).catch(error => {
         console.error('Error loading PDF:', error);
     });
+
+    document.getElementById('zoom-in').addEventListener('click', () => {
+        scale += 0.1;
+        if (pdfDoc) {
+            renderPages(pdfDoc, scale);
+        }
+    });
+    
+    document.getElementById('zoom-out').addEventListener('click', () => {
+        scale = Math.max(0.1, scale - 0.1);
+        if (pdfDoc) {
+            renderPages(pdfDoc, scale);
+        }
+    });
 }
-
-document.getElementById('zoom-in').addEventListener('click', () => {
-    scale += 0.1;
-    if (pdfDoc) {
-        renderPages(pdfDoc, scale);
-    }
-});
-
-document.getElementById('zoom-out').addEventListener('click', () => {
-    scale = Math.max(0.1, scale - 0.1);
-    if (pdfDoc) {
-        renderPages(pdfDoc, scale);
-    }
-});
-
-document.getElementById('search').addEventListener('input', (event) => {
-    const searchText = event.target.value.trim();
-    if (searchText.length > 2) {
-        searchInPDF(searchText);
-    } else {
-        renderCurrentPage();
-    }
-});
-
-function searchInPDF(searchText) {
-    viewer.innerHTML = '';
-    for (let pageNum = 1; pageNum <= pdfDoc.numPages; pageNum++) {
-        pdfDoc.getPage(pageNum).then(page => {
-            page.getTextContent().then(textContent => {
-                const pageText = textContent.items.map(item => item.str).join(' ');
-                if (pageText.toLowerCase().includes(searchText.toLowerCase())) {
-                    renderPage(page, scale, rotation, searchText);
-                }
-            });
-        });
-    }
-}
-

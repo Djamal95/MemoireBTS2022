@@ -34,7 +34,10 @@
 			<!-- Logo -->
 			<div class="d-flex align-items-center justify-content-between">
 				<a href="" class="version d-flex align-items-center">
-					<span class="d-none d-lg-block">{{ __msg('version') }}</span>
+					<span class="d-none d-lg-block logo-version">
+						{{ __msg('version') }}
+						<img src="{{ __img('UFHB.jpg') }}" class="img-fluid logoig">
+					</span>
 				</a>
 				<i class="bi bi-list toggle-sidebar-btn"></i>
 			</div>
@@ -237,7 +240,15 @@
 						<li>
 							<a href="{{ __path('users@all_users_list') }}">
 								<i class="bi bi-circle"></i>
-								<span>compt system management</span>
+								<span>Account system management</span>
+							</a>
+						</li>
+					</ul>
+					<ul id="users-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+						<li>
+							<a href="{{ __path('users@add_users') }}">
+								<i class="bi bi-circle"></i>
+								<span>Add users Acount</span>
 							</a>
 						</li>
 					</ul>

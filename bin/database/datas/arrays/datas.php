@@ -71,7 +71,7 @@ class datas
     }
 
     /**
-     * Rights actions
+     * Sex list
      * @return array
      */
     public function sexList():array
@@ -80,6 +80,22 @@ class datas
             [
                 1 => "Homme",
                 2 => "Femme",
+            ];
+    } 
+
+
+    /**
+     * Speciality list
+     * @return array
+     */
+    public function specialityList():array
+    {
+       return
+            [
+                1 => "GESTION",
+                2 => "ECONOMIE",
+                2 => "COMPTBILITE",
+                2 => "FINANCE",
             ];
     } 
 }

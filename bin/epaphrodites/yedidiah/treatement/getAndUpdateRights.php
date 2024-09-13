@@ -77,9 +77,7 @@ trait getAndUpdateRights
 
         $index = md5(static::class('session')->type() . ',' . $pages);
         $jsonFileDatas = static::loadJsonFile();
-       
         foreach ($jsonFileDatas as $key => $value) {
-
             if ($value['indexRight'] == $index) {
                 $actions = $value['Autorisations'] == 1 ? true : false;
             }

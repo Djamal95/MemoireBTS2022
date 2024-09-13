@@ -1,0 +1,19 @@
+{% extends layouts %}
+{% from message import alert_msg %}
+{% block content %}
+<div>
+    {{ alert_msg( reponse , alert ) }}
+    <div class="document-container">
+        {%for ressource in ressource%}
+        <a href="{{ __pathId( 'student@show_documents' , { '_ressource': ressource._id_doc|e }) }}">
+            <div class="card-body-pdf">
+                <img class="img-doc" src="{{ __img('PDF.png') }}" alt="">
+                <p class="doc-title">{{ ressource.libelleDocument|e }}</p>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+
+
+{% endblock %}

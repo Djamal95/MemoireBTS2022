@@ -1,0 +1,49 @@
+{% extends layouts %}
+{% from forms import input_field, import_field,select_field, submit %}
+{% from breadcrumb import breadcrumb_field %}
+{% from message import alert_msg %}
+{% block content %}
+{{ alert_msg(reponse, alert) }}
+{{ breadcrumb_field("ADD USERS", "users@all_users_list", "LIST OF ALL USERS ACCOUNT") }}
+<div class='container-fluid'>
+    {{ alert_msg(answers, alert) }}
+    <form class="laodForm" method="post" novalidate enctype="multipart/form-data">
+        <div class="row g-3">
+            {{ __csrf() }}
+            {{ input_field({
+                maxlength: 20,
+                require: true,
+                character: "text",
+                name: '__login__',
+                label: "Login",
+                feedback: 'Please enter Login.'
+            }) }}
+            {{ input_field({
+                type: 'password',
+                require: true,
+                name: '__password__',
+                label: 'Password'
+            }) }}
+            {{ input_field({
+                type: 'password',
+                require: true,
+                name: '__confPass__',
+                label: 'Enter password again'
+            }) }}
+            {{ select_field({
+                name: '__group__',
+                label: 'Users group',
+                maxlength: 50,
+                require: true,
+                datas: data.userGroup(),
+                character: 'mixed',
+                readOnly: true
+            }) }}
+            {{ submit({
+                label: 'Save your informations',
+                icon: 'bi bi-pen'
+            }) }}
+        </div>
+    </form>
+</div>
+{% endblock %}

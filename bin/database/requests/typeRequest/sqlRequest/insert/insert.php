@@ -170,4 +170,22 @@ class insert extends InsertInsert
             ->IQuery();
         return $result;
     }
+
+    /**
+     * Method to register User Account
+     * @param string $login
+     * @param string $password
+     * @param int $userGroup
+     * @return bool
+     */
+    public function addUserAccount(string $login, string $password,int $userGroup): bool
+    {
+        $result = $this->table("usersaccount")
+            ->insert("login,password,usersgroup")
+            ->values("?,?,?")
+            ->param([$login,$password, $userGroup])
+            ->sdb(1)
+            ->IQuery();
+        return $result;
+    }
 }

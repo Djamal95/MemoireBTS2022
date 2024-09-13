@@ -788,6 +788,15 @@ tr {
   border: 7px solid transparent;
   border-top-color: var(--color-green);
 }
+.logoimg{
+  width: 300px;
+  height: 200px;
+}
+
+.logoig{
+  width: 25px;
+  height: 25px;
+}
 
 #loader-1:before {
   z-index: 100;

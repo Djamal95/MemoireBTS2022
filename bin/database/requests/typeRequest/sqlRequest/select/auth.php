@@ -36,12 +36,11 @@ class auth extends SelectAuth
   ):array|bool{
 
     if ($this->if_table_exist() === true) {
-
+      
       $result = $this->table('usersaccount')
           ->like('login')
           ->param([$login])
           ->SQuery();
-
       return $result;
       
     } else {

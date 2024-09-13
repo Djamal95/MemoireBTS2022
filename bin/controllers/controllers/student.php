@@ -13,6 +13,7 @@ final class student extends MainSwitchers
     private object $env;
     private string $ans = '';
     private string $alert = '';
+    private object $layout;
     /**
      * Initialize object properties when an instance is created
      * @return void
@@ -33,6 +34,7 @@ final class student extends MainSwitchers
         $this->update = $this->getFunctionObject(static::initQuery(), 'update');
         $this->delete = $this->getFunctionObject(static::initQuery(), 'delete');
         $this->env = $this->getFunctionObject(static::initNamespace(), 'env');
+        $this->layout = $this->getFunctionObject(static::initNamespace(), 'layout');
     }
 
     /**
@@ -116,8 +118,13 @@ final class student extends MainSwitchers
      */
     public final function showProgram(string $html): void
     {
-
-        $this->views($html, [], false);
+        $idDoc = static::isGet('_program', 'int') ? static::getGet('_program') : 0;
+        $program = $this->select->findProgramById($idDoc);
+        $layout = $this->layout->admin(3);
+        $this->views($html, [
+            'layouts' => $layout,
+            'program' => $program
+        ], false);
     }
 
     /**
@@ -126,10 +133,15 @@ final class student extends MainSwitchers
      * @param string $html
      * @return void
      */
-    public final function showRessource(string $html): void
+    public final function showDocuments(string $html): void
     {
-
-        $this->views($html, [], false);
+        $idDoc = static::isGet('_ressource','int')? static::getGet('_ressource'): 0;
+        $ressource = $this->select->findRessourceById($idDoc);
+        $layout = $this->layout->admin(3);
+        $this->views($html, [
+            'layouts' => $layout,
+            'ressource' => $ressource
+        ], false);
     }
 
     /**
@@ -145,5 +157,47 @@ final class student extends MainSwitchers
         $this->views($html, [
             'student' => $listStudent
         ], true);
+    }
+
+    /**
+    * start view function
+    * 
+    * @param string $html
+    * @return void
+    */
+     public final function listOfProgram(string $html): void{
+    $layout = $this->layout->admin(3);
+    $program = $this->select->listOfProgram();
+        $this->views( $html, [
+            'program' => $program,
+            'layouts' => $layout
+        ], false );
+    }
+
+    /**
+    * start view function
+    * 
+    * @param string $html
+    * @return void
+    */
+     public final function listOfDocuments(string $html): void{
+        $ressources = $this->select->listOfRessources();
+        $layout = $this->layout->admin(3);
+
+        $this->views( $html, [
+            'layouts' => $layout,
+            'ressource' => $ressources
+        ], false );
+    }
+
+    /**
+    * start view function
+    * 
+    * @param string $html
+    * @return void
+    */
+     public final function students(string $html): void{
+      
+        $this->views( $html, [], false );
     }
 }

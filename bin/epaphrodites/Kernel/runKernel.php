@@ -35,7 +35,6 @@ class runKernel extends ConfigHttp
          * @return string
          */
         $this->GetUrl = (string) $this->HttpResponses();
-        #var_dump( $this->GetUrl);die;
 
         /**
          * Get user authentification page or destroy session
@@ -48,11 +47,6 @@ class runKernel extends ConfigHttp
         }
 
         if (static::class('session')->id() === NULL && static::class('session')->login() === NULL && $this->GetUrl === "dashboard/students/") {
-
-            $this->GetUrl = (string) $this->InterfaceManager->login();
-        }
-
-        if (static::class('session')->id() !== NULL && static::class('session')->login() !== NULL && $this->GetUrl === "student/") {
 
             $this->GetUrl = (string) $this->InterfaceManager->login();
         }
@@ -84,9 +78,9 @@ class runKernel extends ConfigHttp
 
             $this->GetUrl = (string) $this->InterfaceManager->identification();
         } */
-        
-        
-        
+
+
+
         /**
          * Splitting the URL returned by the GetUrl method into an array
          * @return array
@@ -120,7 +114,7 @@ class runKernel extends ConfigHttp
      * Get Home value
      * @return string
      */
-    public function getHome():string
+    public function getHome(): string
     {
         return _HOME_;
     }

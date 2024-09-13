@@ -46,6 +46,11 @@
                             {% endfor %}
                         </div>
                     </div>
+                </div>              
+                <div class="col-lg-12 mb-12">
+                    <div class="logodsps aos-init pt-20" align="center" data-aos-offset="300">
+                        <img src="{{ __img('UFHB.jpg') }}" class="img-fluid logoimg">
+                    </div>
                 </div>
             </div>
         </div>
@@ -54,13 +59,13 @@
     {{ chartTwo(
     {
     id: 'epaphroditeChart',
-    label: 'Epaphrodite Example Chart',
+    label: 'Répartition des étudiants par spécialité',
     datasets: [
     {
-    chartType : 'line',
+    chartType : 'bar',
     label: 'Dataset 1',
     values : ["value","value1","value2","value3"],
-    keys : ['title','title1','title2','title3'],
+    keys : ['Economie','Gestion','Finance','Comptabilité'],
     data: [
     { "value": 12969, "title": "BLUE" },
     { "value1": 1530, "title1": "YELLOW" },

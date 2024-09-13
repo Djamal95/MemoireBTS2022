@@ -24,7 +24,7 @@ trait addUsersRights
         $JsonDatas = !empty(file_get_contents(static::JsonDatas())) ? file_get_contents(static::JsonDatas()) : "[]";
 
         if ($JsonDatas !== false) {
-            $JsonDatas = json_decode($JsonDatas, true);            
+            $JsonDatas = json_decode($JsonDatas, true);         
         }
 
         $JsonDatas[] = 

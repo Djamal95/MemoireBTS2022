@@ -125,3 +125,81 @@ body {
         background: #ffffff;
     }
 }
+
+.welcome{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+.card-header{
+    background-color: #007300;
+}
+
+.menuUsers{
+    border-radius: 25px;
+    margin-left: 10px;
+}
+
+.hystory{
+    border-radius: 25px;
+    margin-right: 5px;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+.card-body > img{
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 25px;
+}
+.card-body > p{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.card-title{
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.card-body{
+    font-size: 1.1em;
+    color: #555;
+    line-height: 1.6;
+}
+
+.card-body strong {
+    color: #333;
+}
+
+.card-body div {
+    margin-bottom: 10px;
+}
+
+#epaphroditeChart{
+    display: flex;
+    justify-content: center;
+    margin-left: 400px;
+}
+
+@media (max-width: 600px) {
+    .card {
+        padding: 15px;
+        max-width: 100%;
+    }
+
+    .card-title {
+        font-size: 1.3em;
+    }
+
+    .card-body {
+        font-size: 1em;
+    }
+}

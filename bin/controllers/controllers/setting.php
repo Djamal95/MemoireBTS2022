@@ -64,7 +64,6 @@ final class setting extends MainSwitchers
         $userGroup = static::isGet('_see', 'int') ? static::getGet('_see') : 0;
 
         if (static::isValidMethod(true) && $userGroup !== 0) {
-
             $this->result = $this->insert->AddUsersRights($userGroup, static::getPost('__rights__'), static::getPost('__actions__'));
 
             [$this->ans, $this->alert] = static::Responses(

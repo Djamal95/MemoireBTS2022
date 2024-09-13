@@ -97,7 +97,7 @@ final class dashboard extends MainSwitchers
     * @return void
     */
      public final function students(string $html): void{
-    
+        
         $this->views( $html, [
             'layouts' => $this->layout->student()
         ], true );

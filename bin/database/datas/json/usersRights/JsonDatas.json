@@ -5,5 +5,33 @@
         "Modules": "profil",
         "indexModule": "profil,3",
         "indexRight": "038dfa112534e8933afe8ac10f9837b4"
+    },
+    "1": {
+        "usersRightsGroup": 3,
+        "Autorisations": "1",
+        "Modules": "profil",
+        "indexModule": "profil,3",
+        "indexRight": "11b40af5bdb0c1509ba306d340932d3a"
+    },
+    "2": {
+        "usersRightsGroup": 3,
+        "Autorisations": "1",
+        "Modules": "profil",
+        "indexModule": "profil,3",
+        "indexRight": "c4729e027305cdb107d4cb8776cda0e1"
+    },
+    "3": {
+        "usersRightsGroup": 3,
+        "Autorisations": "1",
+        "Modules": "profil",
+        "indexModule": "profil,3",
+        "indexRight": "f1b7cdf30feac2353b975ed12cc3b469"
+    },
+    "4": {
+        "usersRightsGroup": 3,
+        "Autorisations": "1",
+        "Modules": "profil",
+        "indexModule": "profil,3",
+        "indexRight": "12386b3ac254694131181d9b8e78ef9f"
     }
 }

@@ -16,7 +16,7 @@ class GetModulesList extends RighstList
         return 
         [
             'profil' => 'MY PROFILE',
-            'student' => 'GESTION STUDENTS',
+            'student' => 'MANAGEMENT STUDENTS',
             'search' => 'SEARCH',
             'print' => 'PRINT MANAGEMENT',  
             'import' => 'IMPORT MANAGEMENT',
