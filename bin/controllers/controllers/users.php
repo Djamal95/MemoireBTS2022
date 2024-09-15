@@ -130,8 +130,7 @@ final class users extends MainSwitchers
 
             $SheetData = $this->importFiles->importExcelFiles(static::getFileName('__file__'));
 
-            if (!empty($SheetData) && static::getPost('__group__') === 3) {
-
+            if (!empty($SheetData) && static::getPost('__group__') === "3") {
                 $this->result = $this->insert->addUsers($SheetData, static::getPost('__group__'));
                 if (is_array($this->result)) {
                     $this->validate = $this->insert->addStudents($SheetData, $this->result);
@@ -149,7 +148,7 @@ final class users extends MainSwitchers
                     $this->ans = $this->msg->answers('error');
                     $this->alert = 'alert-danger';
                 }
-            } else if (!empty($SheetData) && static::getPost('__group__') !== 3) {
+            } else if (!empty($SheetData) && static::getPost('__group__') !== "3") {
                 $this->result = $this->insert->addUsers($SheetData, static::getPost('__group__'));
                 [$this->ans, $this->alert] = static::Responses(
                     $this->result,

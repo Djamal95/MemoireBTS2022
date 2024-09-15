@@ -68,6 +68,17 @@ class paths extends host
         $this->path = $this->getHost() . 'dashboard/students';
         return $this->path;
     }
+
+    /**
+     * Get the dashboard administrator path
+     *
+     * @return string The dashboard path
+     */
+    public function administrator(): string
+    {
+        $this->path = $this->getHost() . 'dashboard/administrator';
+        return $this->path;
+    }
     /**
      * Get the main path with a specified link
      *

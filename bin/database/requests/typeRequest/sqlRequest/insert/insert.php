@@ -64,7 +64,7 @@ class insert extends InsertInsert
                             [
                                 static::initNamespace()['env']->no_space($sheetData[$i][0]),
                                 static::initConfig()['guard']->CryptPassword($sheetData[$i][3]),
-                                $sheetData[$i][1],
+                               ($sheetData[$i][1] .' '.$sheetData[$i][2]),
                                 $sheetData[$i][5],
                                 $sheetData[$i][4],
                                 $usersgroup
@@ -109,8 +109,8 @@ class insert extends InsertInsert
             for ($i = 0; $i < count($sheetData); $i++) {
                 $dateObject = static::formatSQLDate($sheetData[$i][6]);
                 $result = $this->table("students")
-                    ->insert("_id_user, identifiant, name, surname, email, contact, birthday, birthplace, sex")
-                    ->values('?,?,?,?,?,?,?,?,?')
+                    ->insert("_id_user, identifiant, name, surname, email, contact, birthday, birthplace, sex, speciality")
+                    ->values('?,?,?,?,?,?,?,?,?,?')
                     ->sdb(3)
                     ->param([
                         $id_user[$i],
@@ -121,7 +121,8 @@ class insert extends InsertInsert
                         $sheetData[$i][5],
                         $dateObject,
                         $sheetData[$i][7],
-                        $sheetData[$i][8]
+                        $sheetData[$i][8],
+                        $sheetData[$i][9]
                     ])
                     ->IQuery();
                 if (!$result) {
@@ -183,7 +184,7 @@ class insert extends InsertInsert
         $result = $this->table("usersaccount")
             ->insert("login,password,usersgroup")
             ->values("?,?,?")
-            ->param([$login,$password, $userGroup])
+            ->param([$login,static::initConfig()['guard']->CryptPassword($password), $userGroup])
             ->sdb(1)
             ->IQuery();
         return $result;

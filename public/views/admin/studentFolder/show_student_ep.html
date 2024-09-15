@@ -15,6 +15,7 @@
             <p class="student-detail"><strong>Birthday:</strong> {{ student.birthday | e}}</p>
             <p class="student-detail"><strong>Birthplace:</strong> {{ student.birthplace | e}}</p>
             <p class="student-detail"><strong>Sexe:</strong> {{ student.sex | e}}</p>
+            <p class="student-detail"><strong>Spécialité:</strong> {{ student.speciality | e}}</p>
         </div>
         <div class="student-actions">
             <a href="{{ __pathId( 'student@update_student' , { '_student': student._id|e }) }}"

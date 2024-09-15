@@ -29,28 +29,32 @@ trait makeUpGearShift{
     * Create table students
     * create 26/08/2024 09:27:59
     */
-    /* public function createStudentsTable()
+     public function createStudentsTable()
     {
         return $this->createTable('students', function ($table) {
 
                $table->addColumn('_id', 'INTEGER', ['PRIMARY KEY','AUTO_INCREMENT']);
                $table->addColumn('_id_user', 'INTEGER');
                $table->addColumn('identifiant', 'VARCHAR(15)');
-               $table->addColumn('name', 'VARCHAR(100)', ['DEFAULT NULL']);
-               $table->addColumn('surname', 'VARCHAR(100)', ['DEFAULT NULL']);
+               $table->addColumn('name', 'VARCHAR(100)', ['NOT NULL']);
+               $table->addColumn('surname', 'VARCHAR(100)', ['NOT NULL']);
                $table->addColumn('email', 'VARCHAR(100)', ['DEFAULT NULL']);
                $table->addColumn('contact', 'VARCHAR(100)', ['DEFAULT NULL']);
+               $table->addColumn('birthday', 'DATE', ['NOT NULL']);
+               $table->addColumn('birthplace', 'VARCHAR(100)', ['DEFAULT NULL']);
+               $table->addColumn('sex', 'VARCHAR(100)', ['NOT NULL']);
+               $table->addColumn('speciality', 'VARCHAR(100)', ['NOT NULL']);
                $table->addIndex('identifiant');
                $table->addIndex('_id_user');
                $table->db(3);
         });
-    }      */
+    }
 
     /**
     * Create table program
     * create 31/08/2024 21:18:04
     */
-    public function createProgramTable()
+/*     public function createProgramTable()
     {
         return $this->createTable('program', function ($table) {
 
@@ -60,13 +64,13 @@ trait makeUpGearShift{
                $table->addColumn('program', 'VARCHAR(100)');
                $table->db(3);
         });
-    }     
+    }    */  
 
     /**
     * Create table documents
     * create 31/08/2024 21:18:16
     */
-    public function createDocumentsTable()
+/*     public function createDocumentsTable()
     {
         return $this->createTable('documents', function ($table) {
 
@@ -75,5 +79,5 @@ trait makeUpGearShift{
                $table->addColumn('document', 'VARCHAR(100)');
                $table->db(3);
         });
-    }   
+    }  */  
 }
