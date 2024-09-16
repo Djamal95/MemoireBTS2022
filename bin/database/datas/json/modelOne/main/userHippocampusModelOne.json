@@ -1,0 +1,34 @@
+{
+    "0": {
+        "date": "15-24-2024 04:56:40",
+        "login": "admin",
+        "question": "hello",
+        "answers": "I am Epaphrodites, your AI assistant. How can I help you today? ",
+        "language": "eng",
+        "previous": false
+    },
+    "1": {
+        "date": "15-24-2024 04:57:12",
+        "login": "admin",
+        "question": "I want to install epaphrodites framework",
+        "answers": "I am a language model and I cannot assist you with this question.",
+        "language": "eng",
+        "previous": false
+    },
+    "2": {
+        "date": "15-24-2024 04:57:48",
+        "login": "admin",
+        "question": "how to use this framework",
+        "answers": "I am a professional assistance AI. I do not handle this type of information.",
+        "language": "eng",
+        "previous": false
+    },
+    "3": {
+        "date": "15-24-2024 04:58:09",
+        "login": "admin",
+        "question": "how to use epaphrodites",
+        "answers": "Je suis un modèle de langage et je ne peux pas vous aider avec cette question.",
+        "language": "fr",
+        "previous": false
+    }
+}

@@ -33,5 +33,19 @@
         "Modules": "profil",
         "indexModule": "profil,3",
         "indexRight": "12386b3ac254694131181d9b8e78ef9f"
+    },
+    "5": {
+        "usersRightsGroup": 2,
+        "Autorisations": "1",
+        "Modules": "profil",
+        "indexModule": "profil,2",
+        "indexRight": "69d429050daad076fc735869b993349d"
+    },
+    "6": {
+        "usersRightsGroup": 2,
+        "Autorisations": "1",
+        "Modules": "profil",
+        "indexModule": "profil,2",
+        "indexRight": "e4147d7a8e2d78b3f546f3017e0cafca"
     }
 }
